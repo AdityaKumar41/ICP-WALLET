@@ -1,5 +1,3 @@
-Based on the image you provided and the technologies you're using (React and Rust on the ICP blockchain), here's a revised version of the `README.md` file tailored to your project:
-
 ```markdown
 # ICP Token Wallet
 
@@ -30,13 +28,14 @@ Make sure you have the following installed:
 - Node.js
 - npm or yarn
 - Rust toolchain (with Cargo)
+- dfx cli
 
 ### Getting Started
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/AdityaKumar41/ICP-WALLET
+   cd ICP-WALLET
    ```
 
 2. **Install frontend dependencies**:
@@ -48,13 +47,15 @@ Make sure you have the following installed:
    yarn install
    ```
 
-3. **Build the Rust backend**:
+3. **Build the Project**:
    Navigate to your Rust project directory and run:
    ```bash
-   cargo build --release
+   dfx build
+
+   dfx deploy
    ```
 
-4. **Run the application**:
+4. **Run the application in localhost**:
    - Start the React app:
      ```bash
      npm start
@@ -104,11 +105,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or inquiries, please contact [adityamoharana80@gmail.com](mailto:adityamoharana80@gmail.com).
 ```
-
-### Customization
-
-- Replace `https://github.com/AdityaKumar41/ICP-WALLET/` with your actual repository URL and name.
-- Update the contact email to your actual email.
-- Adjust any details or sections to better fit your project's specifics.
-
-Feel free to ask if you need further modifications or assistance!
