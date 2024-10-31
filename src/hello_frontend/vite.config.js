@@ -4,6 +4,21 @@ import { defineConfig } from 'vite';
 import environment from 'vite-plugin-environment';
 import dotenv from 'dotenv';
 
+// Custom plugin for handling .did files
+function candidPlugin() {
+  return {
+    name: 'vite-plugin-candid',
+    transform(src, id) {
+      if (id.endsWith('.did')) {
+        return {
+          code: `export default ${JSON.stringify(src)}`,
+          map: null,
+        };
+      }
+    },
+  };
+}
+
 dotenv.config({ path: '../../.env' });
 
 export default defineConfig({
@@ -29,6 +44,7 @@ export default defineConfig({
     react(),
     environment("all", { prefix: "CANISTER_" }),
     environment("all", { prefix: "DFX_" }),
+    candidPlugin(), // Add custom plugin here
   ],
   resolve: {
     alias: [
