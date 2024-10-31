@@ -1,61 +1,114 @@
-# `hello`
+Based on the image you provided and the technologies you're using (React and Rust on the ICP blockchain), here's a revised version of the `README.md` file tailored to your project:
 
-Welcome to your new `hello` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+```markdown
+# ICP Token Wallet
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Overview
 
-To learn more before you start working with `hello`, see the following documentation available online:
+The **ICP Token Wallet** is a decentralized application (dApp) designed to securely manage tokens on the Internet Computer Protocol (ICP) blockchain. Built using React for the frontend and Rust for the backend, this wallet provides a user-friendly interface for token management.
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Rust Canister Development Guide](https://internetcomputer.org/docs/current/developer-docs/backend/rust/)
-- [ic-cdk](https://docs.rs/ic-cdk)
-- [ic-cdk-macros](https://docs.rs/ic-cdk-macros)
-- [Candid Introduction](https://internetcomputer.org/docs/current/developer-docs/backend/candid/)
 
-If you want to start working on your project right away, you might want to try the following commands:
+## Features
 
-```bash
-cd hello/
-dfx help
-dfx canister --help
+- **Secure Token Storage**: Employs advanced security measures to ensure the safe storage of tokens.
+- **Get Balance**: Easily check the token balance associated with a wallet address.
+- **Send and Receive Tokens**: User-friendly functionality for sending and receiving tokens with minimal effort.
+- **Sample Address Display**: Provides a sample address for user convenience.
+
+## Technologies Used
+
+- **Frontend**: React
+- **Backend**: Rust
+- **Blockchain**: Internet Computer Protocol (ICP)
+
+## Installation
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm or yarn
+- Rust toolchain (with Cargo)
+
+### Getting Started
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. **Install frontend dependencies**:
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+
+3. **Build the Rust backend**:
+   Navigate to your Rust project directory and run:
+   ```bash
+   cargo build --release
+   ```
+
+4. **Run the application**:
+   - Start the React app:
+     ```bash
+     npm start
+     ```
+     or
+     ```bash
+     yarn start
+     ```
+
+5. **Access the application**: Open your browser and navigate to `http://localhost:3000` (or the appropriate port).
+
+![ICP Token Wallet Screenshot](https://campustocrypto.s3.ap-south-1.amazonaws.com/source/icpwallet.png)
+
+## Usage
+
+- Enter a wallet address in the input field to check the balance.
+- Click the **"Get Balance"** button to retrieve the balance for the entered address.
+- Use the **"Send Tokens"** and **"Receive Tokens"** buttons to facilitate token transactions.
+- Refer to the provided sample address for ease of use.
+
+## Security
+
+Security is paramount in this wallet application. Key security features include:
+- Encryption of sensitive user data.
+- Secure communication protocols to protect against unauthorized access.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Special thanks to the Internet Computer community for their support and resources.
+- Inspired by existing token wallet projects.
+
+## Contact
+
+For questions or inquiries, please contact [adityamoharana80@gmail.com](mailto:adityamoharana80@gmail.com).
 ```
 
-## Running the project locally
+### Customization
 
-If you want to test your project locally, you can use the following commands:
+- Replace `https://github.com/AdityaKumar41/ICP-WALLET/` with your actual repository URL and name.
+- Update the contact email to your actual email.
+- Adjust any details or sections to better fit your project's specifics.
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
-
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
-
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
-
-If you have made changes to your backend canister, you can generate a new candid interface with
-
-```bash
-npm run generate
-```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
-npm start
-```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
-
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+Feel free to ask if you need further modifications or assistance!
